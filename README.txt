@@ -11,7 +11,7 @@ http://guides.rubyonrails.org/getting_started.html
 http://ruby.about.com/od/rubyonrails/ss/railsblog3.htm
 
 And it uses these plugins
-http://github.com/technoweenie/restful-authentication
+https://github.com/satish/restful-authentication - this works with Rails 3
 http://wiki.github.com/mislav/will_paginate/installation
 
 need RMagick installed first for image use

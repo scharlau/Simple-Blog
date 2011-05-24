@@ -4,4 +4,8 @@ class Post < ActiveRecord::Base
   					:length => {:minimum => 5}
   					
   has_many :comments, :dependent => :destroy
+  
+  cattr_reader :per_page
+  @@per_page = 5
+  
 end
