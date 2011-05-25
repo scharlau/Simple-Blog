@@ -1,12 +1,7 @@
 class PostsController < ApplicationController
- before_filter :login_required, :except => %w[ index show rss] 
+ before_filter :login_required, :except => %w[ index show ] 
   before_filter :find_post, :only=> [:show, :edit, :update, :destroy]
 
- def rss
-    headers["Content-Type"] = "application/rss+xml; charset=utf-8"
-    @post = Post.find(:all)
-    render :layout => false
-  end
 
 
   # GET /posts
