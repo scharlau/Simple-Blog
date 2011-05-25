@@ -1,4 +1,14 @@
 class PostsController < ApplicationController
+ before_filter :login_required, :except => %w[ index show rss] 
+  before_filter :find_post, :only=> [:show, :edit, :update, :destroy]
+
+ def rss
+    headers["Content-Type"] = "application/rss+xml; charset=utf-8"
+    @post = Post.find(:all)
+    render :layout => false
+  end
+
+
   # GET /posts
   # GET /posts.xml
   def index
@@ -81,4 +91,11 @@ class PostsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+ def find_post
+  @post = Post.find(params[:id])
+  
+ end
+  
 end
